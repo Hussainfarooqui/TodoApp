@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TdoApp</title>
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrap">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <div class="brand">IRON TODO</div>
+        <div class="small-muted">Cloud Firestore backend</div>
+      </div>
+      <div class="text-end">
+        <div id="user-info" class="small-muted">Not signed in</div>
+        <div class="mt-2">
+          <button id="btn-signin" class="btn btn-sm btn-accent">Sign In (Anonymous)</button>
+          <button id="btn-signout" class="btn btn-sm btn-clear">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <form id="todo-form" class="mb-3 d-flex gap-2">
+        <input id="todo-input" class="todo-input" type="text" placeholder="Add a task (e.g. Fix that bug)..." required />
+        <button class="btn btn-accent" id="add-btn" type="submit">Add</button>
+      </form>
+
+      <div class="mb-2 footer-row">
+        <div class="meta-pill" id="count">0 tasks</div>
+        <div class="d-flex gap-2">
+          <button id="clear-completed" class="btn btn-sm btn-clear">Clear completed</button>
+          <button id="delete-all" class="btn btn-sm btn-clear danger">Delete All</button>
+        </div>
+      </div>
+
+      <ul id="todos" class="todo-list mt-2"></ul>
+
+      <div class="mt-3 small-muted">Tip: Use real-time updates — open this page in two windows to see syncing.</div>
+    </div>
+  </div>
+
+  <!-- Firebase + app code as ES modules -->
+ <script type="module" src="./app.js"></script>
+<script type="module" src="./firebase.js"></script>
+
+</body>
+</html>
